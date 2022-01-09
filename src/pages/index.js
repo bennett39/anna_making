@@ -26,7 +26,8 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      <Bio />
+      <div className="d-flex">
+      <div style={{ flexBasis: `70%`, marginRight: `1em` }}>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -59,6 +60,11 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      </div>
+      <div style={{ flexBasis: `10%` }}>
+          <Bio />
+      </div>
+      </div>
     </Layout>
   )
 }

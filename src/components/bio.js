@@ -19,7 +19,7 @@ const Bio = () => {
             summary
           }
           social {
-            twitter
+            instagram
           }
         }
       }
@@ -31,23 +31,25 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
+    <div className="bio" style={{ flexWrap: `wrap` }}>
+      <div>
       <StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
+        src="../images/anna-profile.jpg"
+        width={150}
+        height={150}
         quality={95}
         alt="Profile picture"
       />
+      </div>
       {author?.name && (
         <p>
           Written by <strong>{author.name}</strong> {author?.summary || null}
           {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
+          <a href={`https://instagram.com/${social?.instagram || ``}`}>
+            Follow her on Instagram
           </a>
         </p>
       )}
